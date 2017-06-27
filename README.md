@@ -1,6 +1,6 @@
-binlog-->canal-->kafka-->elasticsearch
-binlog-->canal-->elasticsearch
-binlog-->canal-->kafka-->sparkstreaming-->elasticsearch
+*. binlog-->canal-->kafka-->elasticsearch   
+*. binlog-->canal-->elasticsearch   
+*. binlog-->canal-->kafka-->sparkstreaming-->elasticsearch
 
 #### or create a new repository on the command line
 
