@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.2pc.github</groupId>
+	<artifactId>canal2other</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name> canal2other </name>
+	
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!--maven properties -->
+		<maven.test.skip>false</maven.test.skip>
+		<downloadSources>true</downloadSources>
+		<canal.project.version>1.0.24</canal.project.version>
+		<es.project.version>5.2.0</es.project.version>
+		<!-- compiler settings properties -->
+		<java_source_version>1.6</java_source_version>
+		<java_target_version>1.6</java_target_version>
+		<file_encoding>UTF-8</file_encoding>
+	</properties>
+	
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.alibaba.otter</groupId>
+			<artifactId>canal.client</artifactId>
+			<version>${canal.project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba.otter</groupId>
+			<artifactId>canal.protocol</artifactId>
+			<version>${canal.project.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.alibaba.otter</groupId>
+					<artifactId>canal.common</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba.otter</groupId>
+			<artifactId>canal.common</artifactId>
+			<version>${canal.project.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-classic</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.elasticsearch.client</groupId>
+		    <artifactId>transport</artifactId>
+		    <version>${es.project.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.elasticsearch</groupId>
+		    <artifactId>elasticsearch</artifactId>
+		    <version>${es.project.version}</version>
+		</dependency>	
+	</dependencies>
+	</project>
+
+	
